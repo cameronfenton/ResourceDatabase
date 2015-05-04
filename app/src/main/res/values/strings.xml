@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ResourceDatabase</string>
+
+    <string name="lbl_title">Resource Database\nBy:
+        Cameron Fenton, Matthew Lepain, James Kerr, Timothy Patton</string>
+    <string name="lbl_contents">Retrieved string from code: \n</string>
+    <string name="lbl_link">QR code containing our projects web address:</string>
+
+    <string name="btn_scan">Scan</string>
+    <string name="btn_exit">Exit</string>
+
+</resources>

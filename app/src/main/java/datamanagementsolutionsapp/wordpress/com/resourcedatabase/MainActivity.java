@@ -5,6 +5,7 @@
  * also a link to our site is included as a QR.
  * Edit and add to the application as you see necessary also feel free to make corrections
  * and improvements
+ *
  */
 
 package datamanagementsolutionsapp.wordpress.com.resourcedatabase;

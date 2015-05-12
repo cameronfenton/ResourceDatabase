@@ -55,13 +55,13 @@ public class DatabaseWriterActivity extends Activity {
             status = preparedStatement.executeUpdate();
 
             // Checks if values were written to database
-            if (status == 1 ) {
+            if (status == 1) {
                 wrote = true;
             } else {
                 wrote = false;
             }
 
-            System.out.println("Values written to the database: " +  wrote);
+            System.out.println("Values written to the database: " + wrote);
 
             // Clean-up environment
             preparedStatement.close();

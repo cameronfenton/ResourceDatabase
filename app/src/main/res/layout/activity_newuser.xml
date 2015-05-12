@@ -10,10 +10,10 @@
         android:id="@+id/lblTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/newUser"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/lblUsername"
@@ -48,4 +48,45 @@
         android:layout_centerVertical="true"
         android:text="@string/verifyPassword"
         android:textSize="22sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtUsername"
+        android:layout_above="@+id/lblPassword"
+        android:layout_toRightOf="@+id/lblUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPassword"
+        android:layout_alignBottom="@+id/lblPassword"
+        android:layout_alignLeft="@+id/txtUsername"
+        android:layout_alignStart="@+id/txtUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtVerifyPassword"
+        android:layout_below="@+id/lblVerfiyPassword"
+        android:layout_alignLeft="@+id/lblVerfiyPassword"
+        android:layout_alignStart="@+id/lblVerfiyPassword"
+        android:layout_marginTop="32dp"
+        android:layout_alignRight="@+id/lblTitle"
+        android:layout_alignEnd="@+id/lblTitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:id="@+id/btnRegister"
+        android:layout_below="@+id/txtVerifyPassword"
+        android:layout_alignRight="@+id/txtVerifyPassword"
+        android:layout_alignEnd="@+id/txtVerifyPassword"
+        android:layout_marginTop="35dp" />
+
 </RelativeLayout>

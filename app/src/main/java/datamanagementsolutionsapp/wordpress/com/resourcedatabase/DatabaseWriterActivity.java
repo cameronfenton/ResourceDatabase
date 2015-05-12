@@ -3,6 +3,9 @@ package datamanagementsolutionsapp.wordpress.com.resourcedatabase;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,13 +14,7 @@ import java.sql.SQLException;
 
 public class DatabaseWriterActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_database);
-        // Allows for network operation on the applications main thread
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+    public void dbWriter(String username, String password, String verifyPassword) {
 
         // JDBC driver
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -47,7 +44,8 @@ public class DatabaseWriterActivity extends Activity {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Query
-            sql = "INSERT INTO Tbl_Names (id, first, last) VALUES ('5', 'Bob', 'Smith')";
+            sql = "INSERT INTO Tbl_Names (username, password) " +
+                    "VALUES ('"+username+"', '"+password+"')";
 
             // Execute a query
             System.out.println("Creating statement...");
@@ -109,6 +107,40 @@ public class DatabaseWriterActivity extends Activity {
         } // End try
 
         System.out.println("Goodbye!");
+
+
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_newuser);
+        // Allows for network operation on the applications main thread
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        Button register;
+
+        final EditText username, password, verifyPassword;
+
+        register = (Button) findViewById(R.id.btnRegister);
+
+        username = (EditText) findViewById(R.id.txtUsername);
+        password = (EditText) findViewById(R.id.txtPassword);
+        verifyPassword = (EditText) findViewById(R.id.txtVerifyPassword);
+
+        final String passwordString = String.valueOf(password.getText());
+        final String verifyPasswordString = String.valueOf(verifyPassword.getText());
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final String usernameString = String.valueOf(username.getText());
+                // calls the method which writes the username to the database
+                dbWriter(usernameString, "", "");
+
+            }
+        });
 
 
     }

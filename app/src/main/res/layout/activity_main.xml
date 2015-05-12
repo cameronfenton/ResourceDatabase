@@ -22,10 +22,12 @@
         android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lblTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp"
-        android:text="@string/btn_scan" />
+        android:text="@string/btn_scan"
+        android:layout_above="@+id/btnDatabaseReader"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/websiteQR"
+        android:layout_toEndOf="@+id/websiteQR" />
 
     <Button
         android:id="@+id/btnExit"
@@ -40,11 +42,13 @@
         android:id="@+id/lblContents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/lbl_contents"
+        android:layout_below="@+id/lblTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnScan"
-        android:layout_marginTop="36dp"
-        android:text="@string/lbl_contents" />
+        android:layout_above="@+id/btnScan"
+        android:layout_alignRight="@+id/btnScan"
+        android:layout_alignEnd="@+id/btnScan" />
 
     <ImageView
         android:id="@+id/websiteQR"
@@ -60,13 +64,12 @@
         android:id="@+id/lblLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/lblContents"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/lblContents"
-        android:layout_centerVertical="true"
         android:text="@string/lbl_link"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBaseline="@+id/btnScan"
+        android:layout_alignBottom="@+id/btnScan"
+        android:layout_toLeftOf="@+id/btnScan"
+        android:layout_toStartOf="@+id/btnScan" />
 
     <Button
         android:id="@+id/btnDatabaseReader"
@@ -75,9 +78,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/websiteQR"
-        android:layout_toEndOf="@+id/btnScan"
-        android:layout_toRightOf="@+id/btnScan"
-        android:text="@string/btn_databaseReader" />
+        android:layout_toEndOf="@+id/websiteQR"
+        android:text="@string/btn_databaseReader"
+        android:layout_toRightOf="@+id/websiteQR" />
 
     <Button
         android:id="@+id/btnDatabaseWriter"

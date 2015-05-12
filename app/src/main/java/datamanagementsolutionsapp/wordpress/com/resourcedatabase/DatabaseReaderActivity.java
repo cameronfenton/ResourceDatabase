@@ -54,7 +54,7 @@ public class DatabaseReaderActivity extends Activity {
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
 
-            sql = "SELECT id, first, last FROM Tbl_Names";
+            sql = "SELECT id, username, password FROM Tbl_Names";
             ResultSet rs;
             rs = stmt.executeQuery(sql);
 
@@ -63,18 +63,18 @@ public class DatabaseReaderActivity extends Activity {
 
                 // Retrieve by column name
                 int id = rs.getInt("id");
-                String first = rs.getString("first");
-                String last = rs.getString("last");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
 
                 // Prints values to console
                 System.out.print("ID: " + id);
-                System.out.print(", First: " + first);
-                System.out.println(", Last: " + last);
+                System.out.print(", First: " + username);
+                System.out.println(", Last: " + password);
 
                 // Appends values to the GUI's EditText
                 txtDatabaseOutput.append("\nID: " + id);
-                txtDatabaseOutput.append("\nFirst: " + first);
-                txtDatabaseOutput.append("\nLast: " + last);
+                txtDatabaseOutput.append("\nFirst: " + username);
+                txtDatabaseOutput.append("\nLast: " + password);
 
             }
 

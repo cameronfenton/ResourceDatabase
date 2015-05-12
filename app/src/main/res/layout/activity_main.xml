@@ -62,4 +62,28 @@
         android:layout_alignRight="@+id/lblContents"
         android:layout_alignEnd="@+id/lblContents" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_databaseReader"
+        android:id="@+id/btnDatabaseReader"
+        android:layout_alignTop="@+id/websiteQR"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/btnScan"
+        android:layout_toEndOf="@+id/btnScan" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_databaseWriter"
+        android:id="@+id/btnDatabaseWriter"
+        android:layout_below="@+id/btnDatabaseReader"
+        android:layout_alignRight="@+id/btnDatabaseReader"
+        android:layout_alignEnd="@+id/btnDatabaseReader"
+        android:layout_toEndOf="@+id/btnScan"
+        android:layout_toRightOf="@+id/btnScan"
+        android:layout_alignLeft="@+id/btnDatabaseReader"
+        android:layout_alignStart="@+id/btnDatabaseReader" />
+
 </RelativeLayout>

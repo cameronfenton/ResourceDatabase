@@ -1,11 +1,12 @@
 /**
- * Resource Database, 4/29/2015
- * @authors Cameron Fenton, Matthew Lepain, James Kerr, Timothy Patton
+ * Resource Database
+ *
+ * @author Cameron Fenton, Matthew Lepain, James Kerr, Timothy Patton
+ * @date 29/04/2015
  * Basic QR code and Barcode scanner scanner prototype,
  * also a link to our site is included as a QR.
  * Edit and add to the application as you see necessary also feel free to make corrections
  * and improvements
- *
  */
 
 package datamanagementsolutionsapp.wordpress.com.resourcedatabase;
@@ -27,8 +28,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Log.i("App", "content view set to main layout");
 
-        Button exit, scan;
+        Button databaseReader, databaseWriter, exit, scan;
 
+        databaseReader = (Button) findViewById(R.id.btnDatabaseReader);
+        databaseWriter = (Button) findViewById(R.id.btnDatabaseWriter);
         exit = (Button) findViewById(R.id.btnExit);
         scan = (Button) findViewById(R.id.btnScan);
 
@@ -47,6 +50,7 @@ public class MainActivity extends Activity {
                 // Passes the mode to be used, the QR code type scan mode to the android.SCAN class
                 intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 // starts the scanner method
+
                 startActivityForResult(intent, 0);
 
                 // Log.i() Prints to console
@@ -68,6 +72,26 @@ public class MainActivity extends Activity {
             }
         });
         // exit onClick method ends
+
+        // databaseReader onClick method starts
+        databaseReader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), DatabaseReaderActivity.class));
+
+            }
+        });
+
+        // databaseWriter onClick method starts
+        databaseWriter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), DatabaseWriterActivity.class));
+
+            }
+        });
 
     }
 

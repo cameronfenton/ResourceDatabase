@@ -3,6 +3,7 @@
     package="datamanagementsolutionsapp.wordpress.com.resourcedatabase">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
 
@@ -21,6 +22,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".DatabaseReaderActivity" />
+        <activity android:name=".DatabaseWriterActivity" />
     </application>
 
 </manifest>

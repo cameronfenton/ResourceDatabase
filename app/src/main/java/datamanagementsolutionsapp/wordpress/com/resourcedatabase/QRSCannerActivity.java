@@ -25,8 +25,8 @@ public class QRSCannerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.i("App", "content view set to main layout");
+        setContentView(R.layout.activity_scanner);
+        Log.i("App", "content view set to scanner layout");
 
         Button databaseReader, databaseWriter, exit, scan;
 

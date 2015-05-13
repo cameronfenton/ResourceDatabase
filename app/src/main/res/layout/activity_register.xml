@@ -55,6 +55,7 @@
         android:id="@+id/txtUsername"
         android:layout_above="@+id/lblPassword"
         android:layout_toRightOf="@+id/lblUsername"
+        android:layout_toEndOf="@+id/lblUsername"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -66,7 +67,8 @@
         android:layout_alignLeft="@+id/txtUsername"
         android:layout_alignStart="@+id/txtUsername"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:inputType="textPassword" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -77,7 +79,8 @@
         android:layout_alignStart="@+id/lblVerfiyPassword"
         android:layout_marginTop="32dp"
         android:layout_alignRight="@+id/lblTitle"
-        android:layout_alignEnd="@+id/lblTitle" />
+        android:layout_alignEnd="@+id/lblTitle"
+        android:inputType="textPassword" />
 
     <Button
         android:layout_width="wrap_content"

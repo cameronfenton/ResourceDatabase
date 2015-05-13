@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DatabaseWriterActivity extends Activity {
+public class DatabaseRegisterActivity extends Activity {
 
 
     public void dbWriter(String username, String password, String verifyPassword) {

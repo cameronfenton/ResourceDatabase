@@ -23,7 +23,7 @@
         </activity>
 
         <activity android:name=".DatabaseReaderActivity" />
-        <activity android:name=".DatabaseWriterActivity" />
+        <activity android:name=".DatabaseRegisterActivity" />
     </application>
 
 </manifest>

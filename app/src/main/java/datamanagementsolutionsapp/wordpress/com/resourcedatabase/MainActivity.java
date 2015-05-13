@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(), DatabaseWriterActivity.class));
+                startActivity(new Intent(getApplicationContext(), DatabaseRegisterActivity.class));
 
             }
         });

@@ -93,6 +93,6 @@
         android:layout_below="@+id/btnDatabaseReader"
         android:layout_toEndOf="@+id/btnScan"
         android:layout_toRightOf="@+id/btnScan"
-        android:text="@string/btn_databaseWriter" />
+        android:text="@string/btn_newUser" />
 
 </RelativeLayout>

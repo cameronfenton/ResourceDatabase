@@ -9,7 +9,7 @@
     <string name="btn_scan">Scan</string>
     <string name="btn_exit">Exit</string>
     <string name="btn_databaseReader">Open Database Reader</string>
-    <string name="btn_databaseWriter">Open Database Writer</string>
+    <string name="btn_newUser">Register New User</string>
 
     <string name="readingDatabase">Reading the Database...</string>
 

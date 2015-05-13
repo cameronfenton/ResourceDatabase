@@ -19,7 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class QRSCannerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

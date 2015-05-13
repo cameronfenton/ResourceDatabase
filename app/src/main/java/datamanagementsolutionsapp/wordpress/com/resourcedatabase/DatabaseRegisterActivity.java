@@ -156,7 +156,7 @@ public class DatabaseRegisterActivity extends Activity {
                                 // calls the method which writes the username to the database
                                 dbWriter(usernameString, passwordString, verifyPasswordString);
 
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), QRSCannerActivity.class));
 
                             } else {
 

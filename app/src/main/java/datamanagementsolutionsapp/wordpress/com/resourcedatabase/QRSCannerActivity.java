@@ -28,10 +28,11 @@ public class QRSCannerActivity extends Activity {
         setContentView(R.layout.activity_scanner);
         Log.i("App", "content view set to scanner layout");
 
-        Button databaseReader, databaseWriter, exit, scan;
+        Button databaseReader, databaseWriter, datbaseStatus, exit, scan;
 
         databaseReader = (Button) findViewById(R.id.btnDatabaseReader);
         databaseWriter = (Button) findViewById(R.id.btnDatabaseWriter);
+        datbaseStatus = (Button) findViewById(R.id.btnDatabaseStatus);
         exit = (Button) findViewById(R.id.btnExit);
         scan = (Button) findViewById(R.id.btnScan);
 

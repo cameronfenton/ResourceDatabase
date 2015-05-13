@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <EditText
         android:id="@+id/txtDatabaseOutput"
-        android:layout_width="match_parent"
+        android:layout_width="184dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:ems="10"
         android:focusable="false"
         android:inputType="textMultiLine"
         android:text="@string/readingDatabase" />
-</LinearLayout>
+
+    <EditText
+        android:id="@+id/txtDatabaseOutputTwo"
+        android:layout_width="184dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="textMultiLine"
+        android:text="@string/readingDatabase"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

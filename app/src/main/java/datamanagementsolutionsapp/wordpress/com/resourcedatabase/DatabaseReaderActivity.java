@@ -140,8 +140,8 @@ public class DatabaseReaderActivity extends Activity {
 
                 // Appends values to the GUI's EditText
                 txtDatabaseOutputTwo.append("\nID: " + id);
-                txtDatabaseOutputTwo.append("\nFirst: " + name);
-                txtDatabaseOutputTwo.append("\nLast: " + status);
+                txtDatabaseOutputTwo.append("\nResource: " + name);
+                txtDatabaseOutputTwo.append("\nIs signed out: " + status);
 
             }
 

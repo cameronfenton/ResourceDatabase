@@ -16,7 +16,6 @@ import java.sql.SQLException;
 
 public class DatabaseRegisterActivity extends Activity {
 
-
     public void dbWriter(String username, String password, String verifyPassword) {
 
         // JDBC driver

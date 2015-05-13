@@ -24,6 +24,7 @@
 
         <activity android:name=".DatabaseReaderActivity" />
         <activity android:name=".DatabaseRegisterActivity" />
+        <activity android:name=".DatabaseResourceStatusActivity" />
     </application>
 
 </manifest>

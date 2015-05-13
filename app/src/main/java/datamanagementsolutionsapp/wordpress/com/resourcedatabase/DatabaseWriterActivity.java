@@ -1,11 +1,13 @@
 package datamanagementsolutionsapp.wordpress.com.resourcedatabase;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DatabaseWriterActivity extends Activity {
+
 
     public void dbWriter(String username, String password, String verifyPassword) {
 
@@ -43,11 +46,11 @@ public class DatabaseWriterActivity extends Activity {
             System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            // Query
+            // Insert query
             sql = "INSERT INTO Tbl_Names (username, password) " +
-                    "VALUES ('"+username+"', '"+password+"')";
+                    "VALUES ('" + username + "', '" + password + "')";
 
-            // Execute a query
+            // Execute insert query
             System.out.println("Creating statement...");
             preparedStatement = conn.prepareStatement(sql);
             status = preparedStatement.executeUpdate();
@@ -110,6 +113,8 @@ public class DatabaseWriterActivity extends Activity {
 
 
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,20 +133,64 @@ public class DatabaseWriterActivity extends Activity {
         password = (EditText) findViewById(R.id.txtPassword);
         verifyPassword = (EditText) findViewById(R.id.txtVerifyPassword);
 
-        final String passwordString = String.valueOf(password.getText());
-        final String verifyPasswordString = String.valueOf(verifyPassword.getText());
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 final String usernameString = String.valueOf(username.getText());
-                // calls the method which writes the username to the database
-                dbWriter(usernameString, "", "");
+                final String passwordString = String.valueOf(password.getText());
+                final String verifyPasswordString = String.valueOf(verifyPassword.getText());
+
+                System.out.println(passwordString);
+                System.out.println(verifyPasswordString);
+
+                if (usernameString.length() >= 1) {
+
+                    if (passwordString.length() >= 1) {
+
+                        if (verifyPasswordString.length() >= 1) {
+
+                            if (passwordString.equals(verifyPasswordString)) {
+
+                                // calls the method which writes the username to the database
+                                dbWriter(usernameString, passwordString, verifyPasswordString);
+
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                            } else {
+
+                                Toast.makeText(getApplicationContext(),
+                                        "Passwords are different!!!", Toast.LENGTH_LONG).show();
+
+                            }
+
+                        } else {
+
+                            Toast.makeText(getApplicationContext(),
+                                    "Enter your password again", Toast.LENGTH_LONG).show();
+
+                        }
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(),
+                                "Enter a password", Toast.LENGTH_LONG).show();
+
+                    }
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(),
+                            "Enter a username", Toast.LENGTH_LONG).show();
+
+                }
+
 
             }
+
         });
 
-
     }
+
 }

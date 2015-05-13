@@ -66,11 +66,6 @@ public class DatabaseReaderActivity extends Activity {
                 String username = rs.getString("username");
                 String password = rs.getString("password");
 
-                // Prints values to console
-                System.out.print("ID: " + id);
-                System.out.print(", First: " + username);
-                System.out.println(", Last: " + password);
-
                 // Appends values to the GUI's EditText
                 txtDatabaseOutput.append("\nID: " + id);
                 txtDatabaseOutput.append("\nFirst: " + username);

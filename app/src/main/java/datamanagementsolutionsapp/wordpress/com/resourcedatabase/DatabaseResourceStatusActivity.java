@@ -99,13 +99,12 @@ public class DatabaseResourceStatusActivity extends Activity {
 
         System.out.println("Goodbye!");
 
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_status);
         // Allows for network operation on the applications main thread
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

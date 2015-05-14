@@ -39,6 +39,8 @@ public class DatabaseReaderActivity extends Activity {
             ResultSet rs;
             rs = stmt.executeQuery(sql);
 
+            txtDatabaseOutput.setText("All current users: ");
+
             // STEP 5: Extract data from result set
             while (rs.next()) {
 
@@ -129,6 +131,8 @@ public class DatabaseReaderActivity extends Activity {
             sql = "SELECT id, resource_name, resource_status FROM Tbl_Resources";
             ResultSet rs;
             rs = stmt.executeQuery(sql);
+
+            txtDatabaseOutputTwo.setText("All current resources: ");
 
             // STEP 5: Extract data from result set
             while (rs.next()) {

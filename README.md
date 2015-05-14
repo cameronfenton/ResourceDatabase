@@ -3,9 +3,9 @@ WIP - Tim Patton - Handling Project Structure - DO NOT EDIT
 
 An opensource database android application for logging when certain items are signed out by the client. 
 
-+ ins Screenshot album link 1
-+ ins Screenshot album link 2
-+ ins Screenshot album link 3
++ Screenshot album link 1
++ Screenshot album link 2
++ Screenshot album link 3
 
 # Contents
 - 1 - [Introduction](#1-introduction)
@@ -18,6 +18,6 @@ An opensource database android application for logging when certain items are si
   
 # 1 Introduction
 ## 1.1 About
-ResourceDatabase is an attempt to create a universal library sign out system, which runs on android. Information is sent to and retrieved from a database hosted at school, this information would include checkout time, sign out status, and more. The program is edited in android studio and uses the Android SDK with a minimum API level of 20 (90.4% all devices) to support  
+ResourceDatabase is an attempt to create a universal library sign out system, which runs on android. Information is sent to and retrieved from a database hosted at school, this information would include checkout time, sign out status, and more. The program is edited in android studio and uses the Android SDK with a minimum API level of 20 (90.4% all devices) to support as many devices as possible. 
 
 

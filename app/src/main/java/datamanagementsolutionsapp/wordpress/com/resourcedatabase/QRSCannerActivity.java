@@ -28,7 +28,7 @@ public class QRSCannerActivity extends Activity {
         setContentView(R.layout.activity_scanner);
         Log.i("App", "content view set to scanner layout");
 
-        Button databaseReader, databaseWriter, datbaseStatus, exit, scan;
+        final Button databaseReader, databaseWriter, datbaseStatus, exit, scan;
 
         databaseReader = (Button) findViewById(R.id.btnDatabaseReader);
         databaseWriter = (Button) findViewById(R.id.btnDatabaseWriter);
@@ -83,6 +83,7 @@ public class QRSCannerActivity extends Activity {
 
             }
         });
+        // databaseReader onClick method ends
 
         // databaseWriter onClick method starts
         databaseWriter.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +94,19 @@ public class QRSCannerActivity extends Activity {
 
             }
         });
+        // databaseWriter onClick method ends
+
+        // databaseStatus onClick method starts
+        datbaseStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(),
+                        DatabaseResourceStatusActivity.class));
+
+            }
+        });
+        // databaseStatus onClick method ends
 
     }
 

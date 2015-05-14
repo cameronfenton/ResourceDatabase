@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -12,13 +13,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- * Created by Cameron on 5/13/2015.
- */
+
 public class DatabaseResourceStatusActivity extends Activity {
 
 
-    public void dbWriter(String resourceStatus, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {
+    public void dbWriter(String resourceItem, String resourceStatus, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {
 
         Boolean wrote;
         Integer status;
@@ -35,8 +34,7 @@ public class DatabaseResourceStatusActivity extends Activity {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Insert query
-            sql = "UPDATE `bookingtestdb`.`Tbl_Resources` SET `resource_status` " +
-                    "= '" + resourceStatus + "' WHERE `Tbl_Resources`.`id` =1";
+            sql = "UPDATE `bookingtestdb`.`Tbl_Resources` SET `resource_status` = '" + resourceStatus + "' WHERE `Tbl_Resources`.`resource_name` ='" + resourceItem + "';";
 
             // Execute insert query
             System.out.println("Creating statement...");
@@ -105,12 +103,27 @@ public class DatabaseResourceStatusActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
+
         // Allows for network operation on the applications main thread
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        final Spinner itemInput, statusInput;
+
         Button changeStatus = (Button) findViewById(R.id.btnChangeStatus);
-        final Spinner statusInput = (Spinner) findViewById(R.id.spinStatusInput);
+        itemInput = (Spinner) findViewById(R.id.spinItemInput);
+        statusInput = (Spinner) findViewById(R.id.spinStatusInput);
+
+        // An adapter to change the array of item names in the resource file to an CharSequence
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.resources, android.R.layout.simple_expandable_list_item_1);
+
+        ArrayAdapter<CharSequence> adapterTwo = ArrayAdapter.createFromResource(this,
+                R.array.states, android.R.layout.simple_expandable_list_item_1);
+
+        // Sets the items on the spinner to the CharSequence
+        itemInput.setAdapter(adapter);
+        statusInput.setAdapter(adapterTwo);
 
         // JDBC driver
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -129,8 +142,9 @@ public class DatabaseResourceStatusActivity extends Activity {
             @Override
             public void onClick(View v) {
 
+                String resourceItem = itemInput.getSelectedItem().toString();
                 String resourceStatus = statusInput.getSelectedItem().toString();
-                dbWriter(resourceStatus, DB_URL, USER, PASS, JDBC_DRIVER);
+                dbWriter(resourceItem, resourceStatus, DB_URL, USER, PASS, JDBC_DRIVER);
 
             }
         });

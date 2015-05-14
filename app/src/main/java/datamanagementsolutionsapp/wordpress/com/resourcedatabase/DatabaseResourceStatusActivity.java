@@ -16,7 +16,6 @@ import java.sql.SQLException;
 
 public class DatabaseResourceStatusActivity extends Activity {
 
-
     public void dbWriter(String resourceItem, String resourceStatus, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {
 
         Boolean wrote;

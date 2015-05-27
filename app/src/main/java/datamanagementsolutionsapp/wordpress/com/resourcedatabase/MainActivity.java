@@ -142,6 +142,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String user, pass;
+                Boolean canLoop = true;
 
                 user = String.valueOf(txtUsername.getText());
                 pass = String.valueOf(txtPassword.getText());
@@ -149,22 +150,32 @@ public class MainActivity extends Activity {
                 readPasswords();
 
                 // Loops through all login credentials
-                for (int i = 0; i < idCount; i++) {
+                for (int i = 0; canLoop; i++) {
 
-                    String indexUsername, indexPassword;
+                    canLoop = i < idCount;
+
+                    Boolean foundMatch;
+                    String indexUsername, indexPassword, match, notMatch;
 
                     indexUsername = loginInfo[i][1];
                     indexPassword = loginInfo[i][2];
 
+                    foundMatch = user.equals(indexUsername) && pass.equals(indexPassword);
+                    match = "Successful login attempt";
+                    notMatch = "Failed login attempt\nUsername and or password incorrect";
+
                     // Checks for match between user input and current user and pass at index
-                    if (user.equals(indexUsername) && pass.equals(indexPassword)) {
+                    if (foundMatch) {
 
-                        System.out.println("Match found for login credentials");
+                        Toast.makeText(getApplicationContext(), match,
+                                Toast.LENGTH_SHORT).show();
                         allowLogin();
+                        canLoop = false;
 
-                    } else {
+                    } else if (i == (idCount-1) && !foundMatch){
 
-                        Toast.makeText(getApplicationContext(), "hi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), notMatch,
+                                Toast.LENGTH_SHORT).show();
 
                     }
 

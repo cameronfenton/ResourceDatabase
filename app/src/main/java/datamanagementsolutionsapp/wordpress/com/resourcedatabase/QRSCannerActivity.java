@@ -26,7 +26,11 @@ public class QRSCannerActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
+
+        String user_type = getIntent().getStringExtra("user_type");
+
         Log.i("App", "content view set to scanner layout");
+        Log.i("App", "Type of user logged in: " + user_type);
 
         final Button databaseReader, databaseWriter, datbaseStatus, exit, scan;
 

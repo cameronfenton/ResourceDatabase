@@ -17,7 +17,7 @@ import java.sql.Statement;
 
 public class MainActivity extends Activity {
 
-    public String[][] loginInfo = new String[99][3];
+    public String[][] loginInfo = new String[99][4];
     public Integer idCount = -1;
 
     public void readPasswords() {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
 
-            sql = "SELECT id, username, password FROM Tbl_Names";
+            sql = "SELECT id, username, password, user_type FROM Tbl_Names";
             ResultSet rs;
             rs = stmt.executeQuery(sql);
 
@@ -57,11 +57,13 @@ public class MainActivity extends Activity {
                 int id = rs.getInt("id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
+                String user_type = rs.getString("user_type");
 
                 // Appends values to the GUI's EditText
                 loginInfo[idCount][0] = (String.valueOf(id));
                 loginInfo[idCount][1] = (username);
                 loginInfo[idCount][2] = (password);
+                loginInfo[idCount][3] = (user_type);
 
             }
 
@@ -113,9 +115,13 @@ public class MainActivity extends Activity {
 
     }
 
-    public void allowLogin() {
+    public void allowLogin(String user_type) {
 
-        startActivity(new Intent(getApplicationContext(), QRSCannerActivity.class));
+        Intent intent = new Intent(getApplicationContext(), QRSCannerActivity.class);
+
+        intent.putExtra("user_type", user_type);
+
+        startActivity(intent);
 
     }
 
@@ -141,7 +147,7 @@ public class MainActivity extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user, pass;
+                String user, pass, indexUserType;
                 Boolean canLoop = true;
 
                 user = String.valueOf(txtUsername.getText());
@@ -159,6 +165,7 @@ public class MainActivity extends Activity {
 
                     indexUsername = loginInfo[i][1];
                     indexPassword = loginInfo[i][2];
+                    indexUserType = loginInfo[i][3];
 
                     foundMatch = user.equals(indexUsername) && pass.equals(indexPassword);
                     match = "Successful login attempt";
@@ -169,7 +176,7 @@ public class MainActivity extends Activity {
 
                         Toast.makeText(getApplicationContext(), match,
                                 Toast.LENGTH_SHORT).show();
-                        allowLogin();
+                        allowLogin(indexUserType);
                         canLoop = false;
 
                     } else if (i == (idCount-1) && !foundMatch){
@@ -189,7 +196,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                System.exit(0);
+                System.exit(0); // Exits the application
 
             }
 

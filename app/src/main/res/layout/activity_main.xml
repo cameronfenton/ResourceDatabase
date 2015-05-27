@@ -21,7 +21,6 @@
         android:layout_alignRight="@+id/txtPassword"
         android:layout_alignEnd="@+id/txtPassword" />
 
-
     <TextView
         android:id="@+id/lblUsername"
         android:layout_width="wrap_content"
@@ -75,5 +74,14 @@
         android:layout_below="@+id/btnLogin"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/kprdsb_logo"
+        android:layout_alignTop="@+id/btnLogin"
+        android:layout_alignLeft="@+id/lblPassword"
+        android:layout_alignStart="@+id/lblPassword" />
 
 </RelativeLayout>

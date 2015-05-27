@@ -126,11 +126,12 @@ public class DatabaseRegisterActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        Button register;
+        Button register, exit;
 
         final EditText username, password, verifyPassword;
 
         register = (Button) findViewById(R.id.btnRegister);
+        exit = (Button) findViewById(R.id.btnExitRegister);
 
         username = (EditText) findViewById(R.id.txtUsername);
         password = (EditText) findViewById(R.id.txtPassword);
@@ -192,6 +193,15 @@ public class DatabaseRegisterActivity extends Activity {
 
             }
 
+        });
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                System.exit(0);
+
+            }
         });
 
     }

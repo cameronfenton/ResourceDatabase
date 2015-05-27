@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -161,6 +162,10 @@ public class MainActivity extends Activity {
                         System.out.println("Match found for login credentials");
                         allowLogin();
 
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), "hi", Toast.LENGTH_SHORT).show();
+
                     }
 
                 }
@@ -176,6 +181,7 @@ public class MainActivity extends Activity {
                 System.exit(0);
 
             }
+
         });
 
     }

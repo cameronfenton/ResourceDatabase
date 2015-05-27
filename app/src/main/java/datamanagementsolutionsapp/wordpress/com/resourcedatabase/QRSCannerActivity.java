@@ -2,7 +2,7 @@
  * Resource Database
  *
  * @author Cameron Fenton, Matthew Lepain, James Kerr, Timothy Patton
- * @date 29/04/2015
+ * @date 26/05/2015
  * Basic QR code and Barcode scanner scanner prototype,
  * also a link to our site is included as a QR.
  * Edit and add to the application as you see necessary also feel free to make corrections

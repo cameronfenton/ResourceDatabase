@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-
+        // GUI variables
         final Button login, exit;
         final EditText txtUsername, txtPassword;
 
@@ -147,6 +147,7 @@ public class MainActivity extends Activity {
 
                 readPasswords();
 
+                // Loops through all login credentials
                 for (int i = 0; i < idCount; i++) {
 
                     String indexUsername, indexPassword;
@@ -154,6 +155,7 @@ public class MainActivity extends Activity {
                     indexUsername = loginInfo[i][1];
                     indexPassword = loginInfo[i][2];
 
+                    // Checks for match between user input and current user and pass at index
                     if (user.equals(indexUsername) && pass.equals(indexPassword)) {
 
                         System.out.println("Match found for login credentials");

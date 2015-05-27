@@ -19,7 +19,10 @@
     <string name="verifyPassword">Verify your password:</string>
     <string name="register">Register\nNew User</string>
 
+    <string name="lblChanger">Resource Status Changer</string>
     <string name="btn_changeStatus">Change resource status</string>
+
+    <string name="lbl_reader">Database Reader</string>
 
     <string name="lbl_login">Login to Resource Database</string>
     <string name="btn_login">Login</string>

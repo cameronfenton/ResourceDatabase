@@ -93,4 +93,13 @@
         android:layout_alignEnd="@+id/txtVerifyPassword"
         android:layout_marginTop="35dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnExit"
+        android:id="@+id/btnExitRegister"
+        android:layout_below="@+id/btnRegister"
+        android:layout_alignRight="@+id/lblTitle"
+        android:layout_alignEnd="@+id/lblTitle" />
+
 </RelativeLayout>

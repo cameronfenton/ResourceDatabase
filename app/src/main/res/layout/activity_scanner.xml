@@ -36,7 +36,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/btn_exit" />
+        android:text="@string/btn_exit"
+        android:layout_toRightOf="@+id/websiteQR"
+        android:layout_toEndOf="@+id/websiteQR" />
 
     <TextView
         android:id="@+id/lblContents"

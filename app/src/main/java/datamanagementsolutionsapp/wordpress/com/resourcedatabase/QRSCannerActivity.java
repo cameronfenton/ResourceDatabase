@@ -18,8 +18,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QRSCannerActivity extends Activity {
+
+    public void displayUserType(String user_type) {
+
+        String statement;
+
+        statement = "Logged in as: " + user_type;
+
+        Toast.makeText(getApplicationContext(), statement, Toast.LENGTH_SHORT).show();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,8 @@ public class QRSCannerActivity extends Activity {
 
         Log.i("App", "content view set to scanner layout");
         Log.i("App", "Type of user logged in: " + user_type);
+
+        displayUserType(user_type);
 
         final Button databaseReader, databaseWriter, datbaseStatus, exit, scan;
 

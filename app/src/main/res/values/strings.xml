@@ -21,6 +21,9 @@
 
     <string name="btn_changeStatus">Change resource status</string>
 
+    <string name="lbl_login">Login to Resource Database</string>
+    <string name="btn_login">Login</string>
+
     <string-array name="resources">
 
         <item>NetbookCart1</item>

@@ -115,11 +115,13 @@ public class MainActivity extends Activity {
 
     }
 
-    public void allowLogin(String user_type) {
+    public void allowLogin(String user_type, String resource_user) {
 
         Intent intent = new Intent(getApplicationContext(), QRSCannerActivity.class);
 
+
         intent.putExtra("user_type", user_type);
+        intent.putExtra("resource_user", resource_user);
 
         startActivity(intent);
 
@@ -176,7 +178,7 @@ public class MainActivity extends Activity {
 
                         Toast.makeText(getApplicationContext(), match,
                                 Toast.LENGTH_SHORT).show();
-                        allowLogin(indexUserType);
+                        allowLogin(indexUserType, indexUsername);
                         canLoop = false;
 
                     } else if (i == (idCount-1) && !foundMatch){

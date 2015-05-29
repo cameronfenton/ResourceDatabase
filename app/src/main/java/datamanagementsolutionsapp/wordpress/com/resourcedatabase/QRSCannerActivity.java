@@ -38,7 +38,8 @@ public class QRSCannerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
 
-        String user_type = getIntent().getStringExtra("user_type");
+        final String user_type = getIntent().getStringExtra("user_type");
+        final String resource_user = getIntent().getStringExtra("resource_user");
 
         Log.i("App", "content view set to scanner layout");
         Log.i("App", "Type of user logged in: " + user_type);
@@ -118,9 +119,12 @@ public class QRSCannerActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(),
-                        DatabaseResourceStatusActivity.class));
+                Intent intent = new Intent(getApplicationContext(), DatabaseResourceStatusActivity.class);
 
+                intent.putExtra("user_type", user_type);
+                intent.putExtra("resource_user", resource_user);
+
+                startActivity(intent);
             }
         });
         // databaseStatus onClick method ends

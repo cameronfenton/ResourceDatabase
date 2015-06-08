@@ -198,7 +198,6 @@ public class DatabaseResourceStatusActivity extends Activity {
             // Call new method
         }
 
-
     }
 
     public void dbWriter(String resourceItem, String user_type, String resource_user, String resourceStatus, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {

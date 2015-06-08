@@ -193,15 +193,15 @@ public class DatabaseResourceStatusActivity extends Activity {
 
             } // End try
 
-            System.out.println("Goodbye!");
 
-
+            // Updates time signed in/out
+            // Call new method
         }
 
 
     }
 
-    public void dbWriter(String resourceItem, String user_type, String resource_user, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {
+    public void dbWriter(String resourceItem, String user_type, String resource_user, String resourceStatus, String DB_URL, String USER, String PASS, String JDBC_DRIVER) {
 
         System.out.println(user_type);
         Boolean wrote;
@@ -219,7 +219,7 @@ public class DatabaseResourceStatusActivity extends Activity {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // Insert query
-            sql = "UPDATE `bookingtestdb`.`Tbl_Resources` SET `resource_status` = '" + resourceItem + "' WHERE `Tbl_Resources`.`resource_name` ='" + resourceItem + "';";
+            sql = "UPDATE `bookingtestdb`.`Tbl_Resources` SET `resource_status` = '" + resourceStatus + "' WHERE `Tbl_Resources`.`resource_name` ='" + resourceItem + "';";
 
             // Execute insert query
             System.out.println("Creating statement...");
@@ -346,8 +346,7 @@ public class DatabaseResourceStatusActivity extends Activity {
                 String resourceStatus = statusInput.getSelectedItem().toString();
 
                 System.out.println("UserType: " + user_type);
-                dbWriter(resourceItem, user_type, resource_user, DB_URL, USER, PASS, JDBC_DRIVER);
-
+                dbWriter(resourceItem, user_type, resource_user, resourceStatus, DB_URL, USER, PASS, JDBC_DRIVER);
             }
 
         });
